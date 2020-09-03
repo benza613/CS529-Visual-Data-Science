@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Benito Alvares</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Recursive:wght@400;500;600;700&display=swap');
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Recursive, Arial, Helvetica, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .header {
+            padding: 50px;
+            text-align: center;
+            background: #006699;
+            color: white !important;
+        }
+
+        .header h1 {
+            font-size: 40px;
+        }
+
+        .header p a {
+            color: white !important;
+
+        }
+
+        /* Style the nav bar */
+        .navbar {
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        .navbar a {
+            float: left;
+            padding: 10px;
+            display: block;
+            color: white;
+            text-decoration: none;
+            text-align: center;
+
+        }
+
+        .navbar a.stick-right {
+            float: right;
+        }
+
+        .navbar a:hover {
+            background-color: silver;
+            color: black;
+        }
+
+
+
+        /* Styling my main and side divs */
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .side-bar {
+            flex: 25%;
+            /* background-color: green; */
+            padding: 15px;
+        }
+
+        .main {
+            flex: 75%;
+            background-color: white;
+            padding: 15px;
+        }
+
+
+        /* CREDIT: w3 responsive layout https://www.w3schools.com/css/css3_mediaqueries.asp */
+        @media screen and (max-width: 700px) {
+            .row {
+                flex-direction: column;
+            }
+        }
+
+        @media screen and (max-width: 400px) {
+            .navbar a {
+                float: none;
+                width: 100%;
+            }
+        }
+
+        .img-responsive {
+            max-width: 90%;
+            object-fit: scale-down;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <h1>Benito Alvares</h1>
+        <p><a href="https://github.com/benza613" target="_blank">Web developer</a> | Gamer | Avid Reader</p>
+    </div>
+
+
+    <div class="navbar">
+        <a href="/index.html">Link</a>
+        <a href="/credit.html">Link</a>
+        <a href="#">Link</a>
+        <a href="#" class="stick-right">Link</a>
+    </div>
+
+
+    <div class="row">
+        <div class="side-bar">
+            <img class="img-responsive"
+                src="https://scontent-ort2-1.cdninstagram.com/v/t51.2885-15/e35/71286744_143226146905834_2856525860872228042_n.jpg?_nc_ht=scontent-ort2-1.cdninstagram.com&_nc_cat=110&_nc_ohc=Ga1y7o0x29IAX9aJibh&oh=f77baf972591a333944fcbffc454f79b&oe=5F794F8C">
+        </div>
+        <div class="main">hello world</div>
+    </div>
+
+
+
+
+
+</body>
+
+</html>
