@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Benito Alvares</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Recursive:wght@400;500;600;700&display=swap');
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Recursive, Arial, Helvetica, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .header {
+            padding: 50px;
+            text-align: center;
+            background: #006699;
+            color: white !important;
+        }
+
+        .header h1 {
+            font-size: 40px;
+        }
+
+        .header p a {
+            color: white !important;
+
+        }
+
+        /* Style the nav bar */
+        .navbar {
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        .navbar a {
+            float: left;
+            padding: 10px;
+            display: block;
+            color: white;
+            text-decoration: none;
+            text-align: center;
+
+        }
+
+        .navbar a.stick-right {
+            float: right;
+        }
+
+        .navbar a:hover {
+            background-color: silver;
+            color: black;
+        }
+
+
+
+        /* Styling my main and side divs */
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .side-bar {
+            flex: 25%;
+            /* background-color: green; */
+            padding: 15px;
+        }
+
+        .main {
+            flex: 75%;
+            background-color: white;
+            padding: 15px;
+        }
+
+
+        /* CREDIT: w3 responsive layout https://www.w3schools.com/css/css3_mediaqueries.asp */
+        @media screen and (max-width: 700px) {
+            .row {
+                flex-direction: column;
+            }
+        }
+
+        @media screen and (max-width: 400px) {
+            .navbar a {
+                float: none;
+                width: 100%;
+            }
+        }
+
+        #canvas {
+            /* position: fixed; */
+            /* top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0; */
+        }
+    </style>
+    <script src="https://kit.fontawesome.com/24a6855680.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div class="header">
+        <h1>Benito Alvares</h1>
+        <p><a href="https://github.com/benza613" target="_blank">Web developer</a> | <a
+                href="https://steamcommunity.com/id/benzalv/" target="_blank">Gamer</a> | Avid Reader | <a
+                href="https://www.linkedin.com/in/benito-alvares/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </p>
+    </div>
+
+
+    <div class="navbar">
+        <a href="/index.html">Home</a>
+        <a href="/svg.html">SVG</a>
+        <a href="/visual.html">Visualisation</a>
+        <a href="/credit.html" class="stick-right">Sources</a>
+    </div>
+
+
+    <div class="row">
+        <div class="side-bar">
+            <p style="line-height: 1.5;">
+                This animation has two simple controls.
+            <ul>
+                <li>Press anywhere in the <b>left half</b> of the canvas svg to STOP or cycle through the speed options-
+                    Slow to Fast</li>
+                <br />
+                <br />
+                <li>Press anywhere in the <b>right half</b> of the canvas svg to cycle through the size options- Small
+                    to Big</li>
+
+            </ul>
+            </p>
+        </div>
+        <div class="main">
+            <canvas id="canvas" style="border:1px solid #000000;"></canvas>
+        </div>
+
+    </div>
+
+
+
+</body>
+<script type="text/javascript">
+    var global_size = 0;
+    var canvas = document.getElementById("canvas"),
+        ctx = canvas.getContext("2d"),
+        timestep = 0, // current time
+        freq = 0.02,
+        d = (window.innerHeight / 4) * 0.5;
+    stageCenter = {
+        x: window.innerWidth / 4,
+        y: window.innerHeight / 4
+    };
+    canvas.width = window.innerWidth / 2;
+    canvas.height = window.innerHeight / 2;
+
+    function nextTick(timestamp) { // each frame
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.globalCompositeOperation = 'lighten';
+
+        drawRect(global_size + 100, 'red');
+        drawCircle(global_size + 64, 'green', Math.cos);
+        drawRectHorizontal(global_size + 64, 'blue', Math.sin);
+
+        timestep += freq;
+        window.requestAnimationFrame(nextTick);
+
+        function drawRect(size, color, wave) {
+            ctx.beginPath();
+
+            // take the Math.sin() or Math.cos() of t and multiply it by the distance
+            var offset = Math.sin(timestep) * d;
+            ctx.rect(stageCenter.x - (size * 0.5), (stageCenter.y - (size * 0.5)) + offset, size, size);
+
+            ctx.fillStyle = color;
+            ctx.fill();
+            ctx.closePath();
+        }
+
+        function drawCircle(size, color, wave) {
+            ctx.beginPath();
+
+            // take the Math.sin() or Math.cos() of t and multiply it by the distance
+            var offset = Math.cos(timestep) * d;
+            ctx.arc(stageCenter.x + (size * 0.5), (stageCenter.y + (size * 0.5)) + offset, size/2, 0, 2 * Math.PI);
+
+            ctx.fillStyle = color;
+            ctx.fill();
+            ctx.closePath();
+        }
+
+        function drawRectHorizontal(size, color, wave) {
+            ctx.beginPath();
+
+            var offset = wave(timestep) * ((window.innerWidth / 4) * 0.5);
+            ctx.rect((stageCenter.x - (size * 0.5)) + offset, stageCenter.y - (size * 0.5), size, size);
+
+            ctx.fillStyle = color;
+            ctx.fill();
+            ctx.closePath();
+        }
+    }
+
+    window.requestAnimationFrame(nextTick);
+
+
+    canvas.addEventListener('click', function (e) {
+        // event for left half click
+        if (e.offsetX <= canvas.width / 2) {
+            if (freq >= 0.025) {
+                freq = 0;
+            } else {
+                freq += 0.005;
+            }
+            return;
+
+        }
+
+        // event for right half click
+        // oscillate between sizes
+        if (global_size >= 150) {
+            global_size = 0;
+            return;
+        }
+
+        global_size += 50;
+    });
+
+
+</script>
+
+</html>
