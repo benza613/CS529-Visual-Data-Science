@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Benito Alvares</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/24a6855680.js" crossorigin="anonymous"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Recursive:wght@400;500;600;700&display=swap');
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Recursive, Arial, Helvetica, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .header {
+            padding: 50px;
+            text-align: center;
+            background: #006699;
+            color: white !important;
+        }
+
+        .header h1 {
+            font-size: 40px;
+        }
+
+        .header p a {
+            color: white !important;
+
+        }
+
+        /* Style the nav bar */
+        .navbar {
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        .navbar a {
+            float: left;
+            padding: 10px;
+            display: block;
+            color: white;
+            text-decoration: none;
+            text-align: center;
+
+        }
+
+        .navbar a.stick-right {
+            float: right;
+        }
+
+        .navbar a:hover {
+            background-color: silver;
+            color: black;
+        }
+
+
+
+        /* Styling my main and side divs */
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .side-bar {
+            flex: 25%;
+            /* background-color: green; */
+            padding: 15px;
+        }
+
+        .main {
+            flex: 75%;
+            background-color: white;
+            padding: 15px;
+        }
+
+
+        /* CREDIT: w3 responsive layout https://www.w3schools.com/css/css3_mediaqueries.asp */
+        @media screen and (max-width: 700px) {
+            .row {
+                flex-direction: column;
+            }
+        }
+
+        @media screen and (max-width: 400px) {
+            .navbar a {
+                float: none;
+                width: 100%;
+            }
+        }
+
+        .img-responsive {
+            max-width: 90%;
+            object-fit: scale-down;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <h1>Benito Alvares</h1>
+        <p><a href="https://github.com/benza613" target="_blank">Web developer</a> | <a
+                href="https://steamcommunity.com/id/benzalv/" target="_blank">Gamer</a> | Avid Reader | <a
+                href="https://www.linkedin.com/in/benito-alvares/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </p>
+    </div>
+
+
+    <div class="navbar">
+        <a href="/index.html">Home</a>
+        <a href="/svg.html">SVG</a>
+        <a href="/visual.html">Visualisation</a>
+        <a href="/credit.html" class="stick-right">Sources</a>
+    </div>
+
+
+    <div class="row">
+        <div class="side-bar">
+        </div>
+        <div class="main">
+            <div style="max-width: 60%;">
+
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+</body>
+
+</html>
