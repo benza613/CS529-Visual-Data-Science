@@ -6,6 +6,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://kit.fontawesome.com/24a6855680.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/sgd.css">
+
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+
+    <script src="js/d3.v5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"
+        integrity="sha512-4UKI/XKm3xrvJ6pZS5oTRvIQGIzZFoXR71rRBb1y2N+PbwAsKa5tPl2J6WvbEvwN3TxQCm8hMzsl/pO+82iRlg=="
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
+    <script src="//cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Recursive:wght@400;500;600;700&display=swap');
 
@@ -14,6 +35,7 @@
         }
 
         body {
+            width: 100%;
             font-family: Recursive, Arial, Helvetica, sans-serif;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
@@ -36,12 +58,12 @@
         }
 
         /* Style the nav bar */
-        .navbar {
+        .navbar1 {
             overflow: hidden;
             background-color: #333;
         }
 
-        .navbar a {
+        .navbar1 a {
             float: left;
             padding: 10px;
             display: block;
@@ -51,34 +73,16 @@
 
         }
 
-        .navbar a.stick-right {
+        .navbar1 a.stick-right {
             float: right;
         }
 
-        .navbar a:hover {
+        .navbar1 a:hover {
             background-color: silver;
             color: black;
         }
 
 
-
-        /* Styling my main and side divs */
-        .row {
-            display: flex;
-            flex-wrap: wrap;
-        }
-
-        .side-bar {
-            flex: 25%;
-            /* background-color: green; */
-            padding: 15px;
-        }
-
-        .main {
-            flex: 75%;
-            background-color: white;
-            padding: 15px;
-        }
 
 
         /* CREDIT: w3 responsive layout https://www.w3schools.com/css/css3_mediaqueries.asp */
@@ -89,7 +93,7 @@
         }
 
         @media screen and (max-width: 400px) {
-            .navbar a {
+            .navbar1 a {
                 float: none;
                 width: 100%;
             }
@@ -113,7 +117,7 @@
     </div>
 
 
-    <div class="navbar">
+    <div class="navbar1">
         <a href="/index.html">Home</a>
         <a href="/svg.html">SVG</a>
         <a href="/visual.html">Visualisation</a>
@@ -121,22 +125,124 @@
     </div>
 
 
-    <div class="row">
-        <div class="side-bar">
-        </div>
-        <div class="main">
-            <div style="max-width: 60%;">
+    <div class="container-fluid full-height">
+        <div class="row" style="margin: 20px 0px;">
+            <br />
+            <br />
+            <div class="col-12" style="text-align: center;">
+                <h1>Slate Gun Deaths Visualization</h1>
+            </div>
+            <div class="col-3"></div>
+            <div class="col-6">
+                <p> Welcome to my page, where you will be able to visualize the number of deaths across various states
+                    and
+                    cities across the US from Dec 2012 to Dec 2013.</p>
+                <ul>
+                    <li>
+                        On Page load, the data is loaded onto a chloropleth map showing the total number of deaths
+                        across the various
+                        states. A darker shade is indicative of greater number of deaths & victims.
+                    </li>
+                    <li>
+                        Hovering over any state will give you a breakdown of deaths for that state gender-wise.
+                    </li>
+                    <li>
+                        Clicking on any state will:
+                        <ol>
+                            <li>
+                                update the datatable to provide a drilldown of deaths for cities
+                                within that particular state across various age groups
+                            </li>
+                            <li>
+                                also update the overall figures in the totals banner
+                            </li>
+                            <li>
+                                will provide a simple visualization of the victims that if you click on it, will lead
+                                you to the URL sourced for that victim. <i>(unfortunately might take a few seconds to
+                                    load)</i>
+                            </li>
+                        </ol>
 
+                    </li>
+                    <li>
+                        Credits can be found <a href="/credit.html">HERE</a>
+                    </li>
+                </ul>
 
             </div>
+            <div class="col-3"></div>
 
         </div>
+        <div class="row totalsBanner" style="margin: 20px 0px;">
+            <div class="col-2"> </div>
+            <div class="col-4">
+                <span class="clrMales3">Male</span> Deaths <span class="stateDrillDown"></span>: <span id="totalMaleDeaths">3</span> <br />
+                <span class="subTotals">Children: </span><span class="subTotals" id="maleChildren"></span> |
+                <span class="subTotals">Teens: </span><span class="subTotals" id="maleTeens"></span> |
+                <span class="subTotals">Adults: </span><span class="subTotals" id="maleAdults"></span>
+            </div>
+            <div class="col-4">
+                <span class="clrFemales3">Female</span> Deaths <span class="stateDrillDown"></span>: <span id="totalFemaleDeaths">3</span><br />
+                <span class="subTotals">Children: </span><span class="subTotals" id="femaleChildren"></span> |
+                <span class="subTotals">Teens: </span><span class="subTotals" id="femaleTeens"></span> |
+                <span class="subTotals">Adults: </span><span class="subTotals" id="femaleAdults"></span>
+            </div>
+            <div class="col-2"> </div>
+
+        </div>
+
+
+
+        <div class="row center-items" style="margin: 10px">
+            <div class="col-8 center-container">
+                <div id="tooltip-container"></div>
+                <div class="viz center-container"></div>
+            </div>
+            <div class="col-4">
+                <table id="maintable" cellspacing="0" cellpadding="0">
+
+                </table>
+            </div>
+        </div>
+
+        <div class="container center-items full-height">
+            <div class="gridBody col-12 full-width center-container full-height">
+                <div id="gridtip-container"></div>
+                <div id="grid-ma" class="gridV full-width center-container full-height"></div>
+                <div id="grid-fa" class="gridV full-width center-container full-height"></div>
+                <div id="grid-mt" class="gridV full-width center-container full-height"></div>
+                <div id="grid-ft" class="gridV full-width center-container full-height"></div>
+                <div id="grid-mc" class="gridV full-width center-container full-height"></div>
+                <div id="grid-fc" class="gridV full-width center-container full-height"></div>
+            </div>
+        </div>
+
+        <!-- <div class="row">
+            <div class="col-3 adult-male" style="text-align: right">
+                223<i class="fas fa-male fa-7x" style="color: darkred;"></i>
+            </div>
+            <div class="col-3 adult-female">
+                <i class="fas fa-female fa-7x"></i> 223
+            </div>
+            <div class="col-3 teenchild-male" style="text-align: right;">
+                223 <i class="fas fa-male fa-5x" style="color: darkred;"></i>
+            </div>
+            <div class="col-3 teenchild-female">
+                <i class="fas fa-male fa-5x"></i> 223
+            </div>
+
+        </div> -->
     </div>
 
 
 
+    <script src="js/d3_viz.js"></script>
 
-
+    <!-- <script type="text/javascript">
+        $(document).ready(function () {
+            $('#maintable').Datatable();
+        });
+    </script> -->
 </body>
 
 </html>

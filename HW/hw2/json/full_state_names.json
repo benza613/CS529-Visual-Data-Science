@@ -1,0 +1,358 @@
+{
+    "states": [
+        {
+            "state_name": "Alabama",
+            "state_abbv": "AL",
+            "createdAt": "",
+            "updatedAt": ""
+        },
+        {
+            "state_name": "Alaska",
+            "state_abbv": "AK",
+            "createdAt": "",
+            "updatedAt": ""
+        },
+        {
+            "state_name": "American Samoa",
+            "state_abbv": "AS",
+            "createdAt": "",
+            "updatedAt": ""
+        },
+        {
+            "state_name": "Arizona",
+            "state_abbv": "AZ",
+            "createdAt": "",
+            "updatedAt": ""
+        },
+        {
+            "state_name": "Arkansas",
+            "state_abbv": "AR",
+            "createdAt": "",
+            "updatedAt": ""
+        },
+        {
+            "state_name": "California",
+            "state_abbv": "CA",
+            "createdAt": "",
+            "updatedAt": ""
+        },
+        {
+            "state_name": "Colorado",
+            "state_abbv": "CO",
+            "createdAt": "",
+            "updatedAt": ""
+        },
+        {
+            "state_name": "Connecticut",
+            "state_abbv": "CT",
+            "createdAt": "",
+            "updatedAt": ""
+        },
+        {
+            "state_name": "Delaware",
+            "state_abbv": "DE",
+            "createdAt": "",
+            "updatedAt": ""
+        },
+        {
+            "state_name": "District Of Columbia",
+            "state_abbv": "DC",
+            "createdAt": "",
+            "updatedAt": ""
+        },
+        {
+            "state_name": "Federated States Of Micronesia",
+            "state_abbv": "FM",
+            "createdAt": "",
+            "updatedAt": ""
+        },
+        {
+            "state_name": "Florida",
+            "state_abbv": "FL",
+            "createdAt": "",
+            "updatedAt": ""
+        },
+        {
+            "state_name": "Georgia",
+            "state_abbv": "GA",
+            "createdAt": "",
+            "updatedAt": ""
+        },
+        {
+            "state_name": "Guam",
+            "state_abbv": "GU",
+            "createdAt": "",
+            "updatedAt": ""
+        },
+        {
+            "state_name": "Hawaii",
+            "state_abbv": "HI",
+            "createdAt": "",
+            "updatedAt": ""
+        },
+        {
+            "state_name": "Idaho",
+            "state_abbv": "ID",
+            "createdAt": "",
+            "updatedAt": ""
+        },
+        {
+            "state_name": "Illinois",
+            "state_abbv": "IL",
+            "createdAt": "",
+            "updatedAt": ""
+        },
+        {
+            "state_name": "Indiana",
+            "state_abbv": "IN",
+            "createdAt": "",
+            "updatedAt": ""
+        },
+        {
+            "state_name": "Iowa",
+            "state_abbv": "IA",
+            "createdAt": "",
+            "updatedAt": ""
+        },
+        {
+            "state_name": "Kansas",
+            "state_abbv": "KS",
+            "createdAt": "",
+            "updatedAt": ""
+        },
+        {
+            "state_name": "Kentucky",
+            "state_abbv": "KY",
+            "createdAt": "",
+            "updatedAt": ""
+        },
+        {
+            "state_name": "Louisiana",
+            "state_abbv": "LA",
+            "createdAt": "",
+            "updatedAt": ""
+        },
+        {
+            "state_name": "Maine",
+            "state_abbv": "ME",
+            "createdAt": "",
+            "updatedAt": ""
+        },
+        {
+            "state_name": "Marshall Islands",
+            "state_abbv": "MH",
+            "createdAt": "",
+            "updatedAt": ""
+        },
+        {
+            "state_name": "Maryland",
+            "state_abbv": "MD",
+            "createdAt": "",
+            "updatedAt": ""
+        },
+        {
+            "state_name": "Massachusetts",
+            "state_abbv": "MA",
+            "createdAt": "",
+            "updatedAt": ""
+        },
+        {
+            "state_name": "Michigan",
+            "state_abbv": "MI",
+            "createdAt": "",
+            "updatedAt": ""
+        },
+        {
+            "state_name": "Minnesota",
+            "state_abbv": "MN",
+            "createdAt": "",
+            "updatedAt": ""
+        },
+        {
+            "state_name": "Mississippi",
+            "state_abbv": "MS",
+            "createdAt": "",
+            "updatedAt": ""
+        },
+        {
+            "state_name": "Missouri",
+            "state_abbv": "MO",
+            "createdAt": "",
+            "updatedAt": ""
+        },
+        {
+            "state_name": "Montana",
+            "state_abbv": "MT",
+            "createdAt": "",
+            "updatedAt": ""
+        },
+        {
+            "state_name": "Nebraska",
+            "state_abbv": "NE",
+            "createdAt": "",
+            "updatedAt": ""
+        },
+        {
+            "state_name": "Nevada",
+            "state_abbv": "NV",
+            "createdAt": "",
+            "updatedAt": ""
+        },
+        {
+            "state_name": "New Hampshire",
+            "state_abbv": "NH",
+            "createdAt": "",
+            "updatedAt": ""
+        },
+        {
+            "state_name": "New Jersey",
+            "state_abbv": "NJ",
+            "createdAt": "",
+            "updatedAt": ""
+        },
+        {
+            "state_name": "New Mexico",
+            "state_abbv": "NM",
+            "createdAt": "",
+            "updatedAt": ""
+        },
+        {
+            "state_name": "New York",
+            "state_abbv": "NY",
+            "createdAt": "",
+            "updatedAt": ""
+        },
+        {
+            "state_name": "North Carolina",
+            "state_abbv": "NC",
+            "createdAt": "",
+            "updatedAt": ""
+        },
+        {
+            "state_name": "North Dakota",
+            "state_abbv": "ND",
+            "createdAt": "",
+            "updatedAt": ""
+        },
+        {
+            "state_name": "Northern Mariana Islands",
+            "state_abbv": "MP",
+            "createdAt": "",
+            "updatedAt": ""
+        },
+        {
+            "state_name": "Ohio",
+            "state_abbv": "OH",
+            "createdAt": "",
+            "updatedAt": ""
+        },
+        {
+            "state_name": "Oklahoma",
+            "state_abbv": "OK",
+            "createdAt": "",
+            "updatedAt": ""
+        },
+        {
+            "state_name": "Oregon",
+            "state_abbv": "OR",
+            "createdAt": "",
+            "updatedAt": ""
+        },
+        {
+            "state_name": "Palau",
+            "state_abbv": "PW",
+            "createdAt": "",
+            "updatedAt": ""
+        },
+        {
+            "state_name": "Pennsylvania",
+            "state_abbv": "PA",
+            "createdAt": "",
+            "updatedAt": ""
+        },
+        {
+            "state_name": "Puerto Rico",
+            "state_abbv": "PR",
+            "createdAt": "",
+            "updatedAt": ""
+        },
+        {
+            "state_name": "Rhode Island",
+            "state_abbv": "RI",
+            "createdAt": "",
+            "updatedAt": ""
+        },
+        {
+            "state_name": "South Carolina",
+            "state_abbv": "SC",
+            "createdAt": "",
+            "updatedAt": ""
+        },
+        {
+            "state_name": "South Dakota",
+            "state_abbv": "SD",
+            "createdAt": "",
+            "updatedAt": ""
+        },
+        {
+            "state_name": "Tennessee",
+            "state_abbv": "TN",
+            "createdAt": "",
+            "updatedAt": ""
+        },
+        {
+            "state_name": "Texas",
+            "state_abbv": "TX",
+            "createdAt": "",
+            "updatedAt": ""
+        },
+        {
+            "state_name": "Utah",
+            "state_abbv": "UT",
+            "createdAt": "",
+            "updatedAt": ""
+        },
+        {
+            "state_name": "Vermont",
+            "state_abbv": "VT",
+            "createdAt": "",
+            "updatedAt": ""
+        },
+        {
+            "state_name": "Virgin Islands",
+            "state_abbv": "VI",
+            "createdAt": "",
+            "updatedAt": ""
+        },
+        {
+            "state_name": "Virginia",
+            "state_abbv": "VA",
+            "createdAt": "",
+            "updatedAt": ""
+        },
+        {
+            "state_name": "Washington",
+            "state_abbv": "WA",
+            "createdAt": "",
+            "updatedAt": ""
+        },
+        {
+            "state_name": "West Virginia",
+            "state_abbv": "WV",
+            "createdAt": "",
+            "updatedAt": ""
+        },
+        {
+            "state_name": "Wisconsin",
+            "state_abbv": "WI",
+            "createdAt": "",
+            "updatedAt": ""
+        },
+        {
+            "state_name": "Wyoming",
+            "state_abbv": "WY",
+            "createdAt": "",
+            "updatedAt": ""
+        }
+    ]
+}
